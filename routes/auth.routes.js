@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/User.model");
+const bcryptjs = require("bcryptjs");
+const saltRounds = 10;
 
 router.get("/", (req, res, next) => {});
 
@@ -9,6 +12,10 @@ router.get("/signup", (req, res, next) => {
 });
 
 //POST to work with sign up values
+router.post("/signup", async (req, res, next) => {
+  const newUser = await User.create(req.body);
+  console.log(newUser);
+});
 
 //GET for log in form
 router.get("/login", (req, res, next) => {
