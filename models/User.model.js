@@ -6,6 +6,7 @@ const userSchema = new Schema(
     username: {
       type: String,
       trim: true,
+<<<<<<< HEAD
       required: false,
       unique: true
     },
@@ -16,14 +17,20 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },*/
+=======
+      required: true,
+      unique: true,
+    },
+
+>>>>>>> 09737ebf2b950344cb447f8192d825a6f5327a6e
     password: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`    
-    timestamps: true
+    // this second object adds extra properties: `createdAt` and `updatedAt`
+    timestamps: true,
   }
 );
 
