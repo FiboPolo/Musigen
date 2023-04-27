@@ -1,1 +1,33 @@
-<h1>Sign up Page</h1>
+<div class="signup-page">
+  <div class="white-container">
+    <h1>Signup</h1>
+    <br />
+    <div class="signup-container">
+
+      <form class="signup-form" action="/signup" method="post">
+        <input
+          type="username"
+          name="username"
+          value=""
+          required="true"
+          placeholder="Enter your username"
+        />
+        <input
+          type="password"
+          name="password"
+          value=""
+          required="true"
+          placeholder="Enter your password"
+        />
+
+        <input class="btn-form" type="submit" value="Signup" />
+      </form>
+      <br />
+      <br />
+
+      <button class="btn">
+        <a href="/auth/login">Go to log in page</a>
+      </button>
+    </div>
+  </div>
+</div>
