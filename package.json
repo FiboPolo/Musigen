@@ -12,10 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "express": "^4.18.2"
-  }
-=======
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
@@ -28,11 +24,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "description": "",
-  "main": "app.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
->>>>>>> 09737ebf2b950344cb447f8192d825a6f5327a6e
+  }
 }
+  
+
