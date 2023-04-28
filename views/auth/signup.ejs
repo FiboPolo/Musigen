@@ -7,7 +7,7 @@
         <input
           type="username"
           name="username"
-          value=""
+          value="<% if(typeof errorMessage !== 'undefined') { %><%= data.username %><% } %>"
           required="true"
           placeholder="Enter your username"
         />

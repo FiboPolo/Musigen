@@ -3,7 +3,7 @@
     <h1>Log in</h1>
     <br />
     <div class="signup-container">
-      <form class="signup-form" action="/login" method="post">
+      <form class="signup-form" action="/auth/login" method="post">
         <input
           type="username"
           name="username"
@@ -18,6 +18,9 @@
         />
 
         <input class="btn-form" type="submit" value="Log in" />
+        <% if(typeof errorMessage !== 'undefined') { %>
+        <p style="color: red"><%= errorMessage %></p>
+        <% } %>
       </form>
     </div>
   </div>
