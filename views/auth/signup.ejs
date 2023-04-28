@@ -27,6 +27,9 @@
       <button class="btn">
         <a href="/auth/login">Go to log in page</a>
       </button>
+      <% if(typeof errorMessage !== 'undefined') { %>
+      <p style="color: red"><%= errorMessage %></p>
+      <% } %>
     </div>
   </div>
 </div>

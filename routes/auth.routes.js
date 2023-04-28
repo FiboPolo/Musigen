@@ -13,8 +13,24 @@ router.get("/signup", (req, res, next) => {
 
 //POST to work with sign up values
 router.post("/signup", async (req, res, next) => {
-  const newUser = await User.create(req.body);
-  console.log(newUser);
+  try {
+    const potentialUser = await User.findOne({ username: req.body.username });
+    if (!potentialUser) {
+      const salt = bcryptjs.genSaltSync(saltRounds);
+
+      const passwordHash = bcryptjs.hashSync(req.body.password, salt);
+
+      const newUser = await User.create({
+        username: req.body.username,
+        passwordHash,
+      });
+      res.redirect("/auth/login");
+    } else {
+      res.render("auth/signup", { errorMessage: "Username already in use" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 //GET for log in form
