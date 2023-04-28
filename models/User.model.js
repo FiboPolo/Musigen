@@ -7,7 +7,7 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: false,
-      unique: true
+      unique: true,
     },
     /*email: {
       type: String,
@@ -16,7 +16,7 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },*/
-    password: {
+    passwordHash: {
       type: String,
       required: true,
     },
