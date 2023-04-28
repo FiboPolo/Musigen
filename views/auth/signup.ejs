@@ -3,12 +3,11 @@
     <h1>Signup</h1>
     <br />
     <div class="signup-container">
-
-      <form class="signup-form" action="/signup" method="post">
+      <form class="signup-form" action="/auth/signup" method="post">
         <input
           type="username"
           name="username"
-          value=""
+          value="<% if(typeof errorMessage !== 'undefined') { %><%= data.username %><% } %>"
           required="true"
           placeholder="Enter your username"
         />
@@ -28,6 +27,9 @@
       <button class="btn">
         <a href="/auth/login">Go to log in page</a>
       </button>
+      <% if(typeof errorMessage !== 'undefined') { %>
+      <p style="color: red"><%= errorMessage %></p>
+      <% } %>
     </div>
   </div>
 </div>
