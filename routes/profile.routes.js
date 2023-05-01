@@ -14,8 +14,9 @@ router.post("/createMusician", async (req, res, next) => {
   res.redirect("/profile/musicianList");
 });
 
-router.get("/MusicianList", (req, res, next) => {
-  res.render("profile/musicianList");
+router.get("/MusicianList", async (req, res, next) => {
+  const allMusicians = await Musician.find();
+  res.render("profile/musicianList", { allMusicians });
 });
 
 module.exports = router;

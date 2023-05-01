@@ -1,1 +1,8 @@
 <h1>Musician List</h1>
+<% allMusicians.forEach(element => { %>
+<h2><%- element.name %></h2>
+<h3><%- element.role %></h3>
+<h3><%- element.yearsOfExperience %></h3>
+<h3><%- element.favouriteGenre %></h3>
+<h3><%- element.favouriteBand %></h3>
+<% }); %>
