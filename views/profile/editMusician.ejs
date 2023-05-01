@@ -1,11 +1,11 @@
 <body>
   <h1>Edit Musician</h1>
-  <form action="/profile/editMusician" method="post">
+  <form action="/profile/editMusician/<%- musicianToUpdate._id %>" method="post">
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" style="margin-bottom: 10px"/><br />
+    <input type="text" id="name" name="name" value="<%- musicianToUpdate.name %>" style="margin-bottom: 10px"/><br />
 
     <label for="role">Role:</label>
-    <select id="role" name="role" style="margin-bottom: 10px">
+    <select id="role" name="role" value="<%- musicianToUpdate.role %>" style="margin-bottom: 10px">
       <option value="Vocals">Singer</option>
       <option value="Guitar">Guitarist</option>
       <option value="Bass">Bassist</option>
@@ -17,17 +17,19 @@
       type="number"
       id="yearsOfExperience"
       name="yearsOfExperience"
+      value="<%- musicianToUpdate.yearsOfExperience %>"
       style="margin-bottom: 10px"
+      
     /><br />
 
     <label for="favouriteGenre">Favorite Genre:</label>
-    <input type="text" id="genre" name="favouriteGenre" style="margin-bottom: 10px"/><br />
+    <input type="text" id="genre" name="favouriteGenre" value="<%- musicianToUpdate.favouriteGenre %>" style="margin-bottom: 10px"/><br />
 
     <label for="favouriteBand">Favorite Band:</label>
-    <input type="text" id="band" name="favouriteBand" style="margin-bottom: 10px"/><br />
+    <input type="text" id="band" name="favouriteBand" value="<%- musicianToUpdate.favouriteBand %>" style="margin-bottom: 10px"/><br />
 
     <button type="submit">
-      Save Profile
+      Update Profile
     </button>
   </form>
 </body>
