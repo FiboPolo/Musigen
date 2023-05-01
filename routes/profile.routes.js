@@ -8,9 +8,10 @@ router.get("/createMusician", (req, res, next) => {
 });
 
 router.post("/createMusician", async (req, res, next) => {
+  console.log(req.body);
   const createdMusician = await Musician.create(req.body);
   console.log("new musician", createdMusician);
-  res.redirect("profile/musicianList");
+  res.redirect("/profile/musicianList");
 });
 
 router.get("/MusicianList", (req, res, next) => {
