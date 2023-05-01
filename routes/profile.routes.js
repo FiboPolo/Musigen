@@ -33,4 +33,5 @@ router.get("/editMusician/:musicianId", async (req, res, next) => {
   res.render("profile/editMusician", { musicianToUpdate });
 });
 
+
 module.exports = router;
