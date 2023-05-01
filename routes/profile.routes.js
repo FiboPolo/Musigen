@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Musician = require("../models/musician.model");
 
-/* GET home page */
 router.get("/createMusician", (req, res, next) => {
   res.render("profile/createMusician");
 });
@@ -17,6 +16,13 @@ router.post("/createMusician", async (req, res, next) => {
 router.get("/MusicianList", async (req, res, next) => {
   const allMusicians = await Musician.find();
   res.render("profile/musicianList", { allMusicians });
+});
+
+router.get("/delete/:musicianId", async (req, res, next) => {
+  const { musicianId } = req.params;
+  await Musician.findByIdAndDelete(musicianId);
+  console.log(req.params);
+  res.redirect("/profile/musicianList");
 });
 
 module.exports = router;
