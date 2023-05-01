@@ -33,4 +33,17 @@ router.get("/editMusician/:musicianId", async (req, res, next) => {
   res.render("profile/editMusician", { musicianToUpdate });
 });
 
+router.post("/editMusician/:musicianId", async (req, res, next) => {
+  const { musicianId } = req.params;
+  const updatedMusician = await Musician.findByIdAndUpdate(
+    musicianId,
+    req.body,
+    {
+      new: true,
+    }
+  );
+  console.log("new Musician", updatedMusician);
+  res.redirect("/profile/musicianList");
+});
+
 module.exports = router;
