@@ -25,4 +25,12 @@ router.get("/delete/:musicianId", async (req, res, next) => {
   res.redirect("/profile/musicianList");
 });
 
+router.get("/edit-musician/:musicianId", async (req, res, next) => {
+  const musicianToUpdate = await Musician.findById(
+    req.params.musicianId
+  ).populate();
+  console.log(musicianToUpdate);
+  res.render("profile/editMusician");
+});
+
 module.exports = router;
