@@ -37,4 +37,4 @@ Deployment link - https://musigen.adaptable.app/
 
 Slides
 
-Url for the project presentation -
+Url for the project presentation - https://slides.com/stevepb/code-9b1f31
